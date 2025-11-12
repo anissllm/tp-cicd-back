@@ -8,6 +8,8 @@
 
 name: Java CI with Maven
 
+IMAGE_NAME: asllm/cicd-back:github.ref name
+
 on:
   push:
     branches: [ "*" ]
@@ -29,3 +31,5 @@ jobs:
         cache: maven
     - name: Build with Maven
       run: mvn -B package --file pom.xml
+    - name: Build Docker
+      run : IMAGE_NAME
