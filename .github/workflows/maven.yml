@@ -8,7 +8,7 @@
 
 name: Java CI with Maven
 
-IMAGE_NAME: asllm/cicd-back:github.ref name
+IMAGE_NAME: asllm/cicd-back:${{github.ref name}}
 
 on:
   push:
@@ -32,4 +32,4 @@ jobs:
     - name: Build with Maven
       run: mvn -B package --file pom.xml
     - name: Build Docker
-      run : docker build -t IMAGE_NAME .
+      run : docker build -t $IMAGE_NAME .
