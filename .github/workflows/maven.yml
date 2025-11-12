@@ -8,7 +8,8 @@
 
 name: Java CI with Maven
 
-IMAGE_NAME: asllm/cicd-back:${{github.ref name}}
+env:
+  IMAGE_NAME: asllm/cicd-back:${{ github.ref_name }}
 
 on:
   push:
